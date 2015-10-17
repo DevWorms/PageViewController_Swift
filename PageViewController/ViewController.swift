@@ -17,6 +17,27 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.pageTitles = NSArray(objects: "white","black")
+        self.pageImages = NSArray(objects: "i1","i2")
+        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+        self.pageViewController.dataSource = self
+        
+        //posicionar en la primera
+        let startVC = self.viewControllerAtIndex(0) as ContentViewController
+        let viewControllers = NSArray(object: startVC)
+        
+        self.pageViewController.setViewControllers(viewControllers as? [UIViewController] , direction: .Forward , animated: true, completion: nil)
+        //
+        
+        self.pageViewController.view.frame = CGRect(x: 0, y: 30, width: self.view.frame.width, height: self.view.frame.height - 60)
+        
+        self.addChildViewController(self.pageViewController)
+        
+        self.view.addSubview(self.pageViewController.view)
+        
+        self.pageViewController.didMoveToParentViewController(self)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +55,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
             return ContentViewController()
         }
         
-        let vc: ContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("") as! ContentViewController
+        let vc: ContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ContentViewController") as! ContentViewController
         
         vc.imageFile = self.pageImages[index] as! String
         vc.titleText = self.pageTitles[index] as! String
@@ -52,7 +73,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         var index = vc.pageIndex as Int
         
         if (index == 0 || index == NSNotFound){
-            
             return nil
         }
         
@@ -62,16 +82,32 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         
     }
     
-    
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
+        let vc = viewController as! ContentViewController
+        var index = vc.pageIndex as Int
         
+        if (index == NSNotFound){
+            return nil
+        }
         
+        index++
         
+        if (index == self.pageTitles.count){
+            return nil
+        }
         
-        return nil
+        return self.viewControllerAtIndex(index)
+    
     }
     
-
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return self.pageTitles.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
 }
 
