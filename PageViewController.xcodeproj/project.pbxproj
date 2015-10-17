@@ -101,8 +101,8 @@
 			children = (
 				3B5A9FED1BD1C48700F79599 /* AppDelegate.swift */,
 				3B5A9FEF1BD1C48800F79599 /* ViewController.swift */,
-				3B5A9FF11BD1C48A00F79599 /* Main.storyboard */,
 				3B5AA01D1BD1CF4700F79599 /* ContentViewController.swift */,
+				3B5A9FF11BD1C48A00F79599 /* Main.storyboard */,
 				3B5A9FF41BD1C48B00F79599 /* Assets.xcassets */,
 				3B5A9FF61BD1C48B00F79599 /* LaunchScreen.storyboard */,
 				3B5A9FF91BD1C48B00F79599 /* Info.plist */,
@@ -485,6 +485,7 @@
 				3B5AA0141BD1C49B00F79599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B5AA0151BD1C49B00F79599 /* Build configuration list for PBXNativeTarget "PageViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +494,7 @@
 				3B5AA0171BD1C49B00F79599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B5AA0181BD1C49B00F79599 /* Build configuration list for PBXNativeTarget "PageViewControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +503,7 @@
 				3B5AA01A1BD1C49B00F79599 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

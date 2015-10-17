@@ -20,6 +20,9 @@
                                 <rect key="frame" x="317" y="617" width="30" height="30"/>
                                 <animations/>
                                 <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="buttonOK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r0r-lF-5Y7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -42,10 +45,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-1o-gLl">
-                                <rect key="frame" x="20" y="49" width="335" height="598"/>
-                                <animations/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48e-iE-qMS">
                                 <rect key="frame" x="170" y="20" width="34" height="21"/>
                                 <animations/>
@@ -53,11 +52,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-1o-gLl">
+                                <rect key="frame" x="20" y="49" width="335" height="598"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="ImageView" destination="0NY-1o-gLl" id="lF3-O8-440"/>
+                        <outlet property="Tittle" destination="48e-iE-qMS" id="GOQ-dO-hCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFe-lS-7i1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
